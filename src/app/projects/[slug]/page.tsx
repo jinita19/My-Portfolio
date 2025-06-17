@@ -2,7 +2,7 @@ import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 
 interface ProjectDetailPageProps {
- params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectDetail({params} : ProjectDetailPageProps ) {
+export default async function ProjectDetail({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
@@ -19,7 +19,7 @@ export default async function ProjectDetail({params} : ProjectDetailPageProps ) 
   const { title, description, brief, techs, work } = project;
 
   return (
-    <main className="flex flex-col items-center justify-center py-20 px-4 bg-peach-50">
+    <main className="flex flex-col items-center justify-center py-10 px-4 bg-peach-50">
       <div className="w-full max-w-3xl flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold text-peach-900 mb-4 w-full text-left">
           {title}

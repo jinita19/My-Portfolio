@@ -1,5 +1,5 @@
 import './globals.css';
-import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'Jinita | Developer Portfolio',
@@ -9,28 +9,17 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-peach-50 text-peach-900 font-sans">
-        <nav className="flex items-center justify-between px-6 py-4 bg-peach-50 shadow-sm fixed w-full z-50">
-          <h1 className="text-xl font-bold text-peach-900">Jinita Patel</h1>
-          <ul className="flex space-x-6 text-sm text-peach-500 font-medium">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href="#contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-        <main className="p-6">{children}</main>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen bg-peach-50 text-peach-900 font-body">
+        <Navbar />
+        <main className="px-40 pt-20">{children}</main>
       </body>
     </html>
   );
