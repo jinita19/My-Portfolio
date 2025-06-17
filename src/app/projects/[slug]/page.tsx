@@ -1,8 +1,19 @@
-import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
+import { notFound } from 'next/navigation';
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+interface ProjectDetailPageProps {
+ params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default async function ProjectDetail({params} : ProjectDetailPageProps ) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
 
   const { title, description, brief, techs, work } = project;
