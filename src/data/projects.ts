@@ -74,5 +74,20 @@ export const projects: Project[] = [
   //     "Led a unique column-merging solution that reduced horizontal scrolling by 80% and significantly improved readability.",
   //     "Delivered the migration with seamless hierarchical views, robust copy-paste functionality, and created a versatile template grid, all enhancing usability and efficiency."
   //   ]
-  // }
+  // },
+  {
+    slug: 'member-app',
+    title: 'Member App',
+    description: 'A web application for managing member accounts and services.',
+    image: '/images/memberapp.png',
+    brief:
+      'Worked as a Full Stack Developer on a Member App project focused on delivering a responsive user experience and optimizing backend performance. The app included CMS capabilities and smart storage handling to improve speed, security, and cost-efficiency.',
+    techs: ['React', 'Node.js', 'Express.js', 'GraphQL', 'AWS', 'Jenkins', 'Git'],
+    work: [
+      'Structured a flexible CMS to manage dynamic content efficiently across the member-facing application.',
+      'Engineered end-to-end development using Java, Spring Boot, and SQL for robust API and database design.',
+      'Cut storage costs by 30% by automating S3 lifecycle transitions and applying fine-grained IAM security policies.',
+      'Built a fast, responsive product search using GraphQL, Express.js, and React, reducing search time from 3s to 500ms.',
+    ],
+  },
 ];
