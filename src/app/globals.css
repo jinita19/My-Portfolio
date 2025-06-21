@@ -17,6 +17,7 @@
   --font-navbar: 'Poppins';
   --font-heading: 'Poppins';
   --font-body: 'Lato';
+  --font-article: 'Open Sans';
 }
 
 body {
@@ -37,6 +38,16 @@ body {
 }
 .italic {
   font-style: italic;
+}
+
+article {
+  font-family: var(--font-article);
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 6px auto;
+    border-radius: 20px;
+  }
 }
 
 h1,
