@@ -14,7 +14,7 @@ const icons = [
 
 export default function TechMarquee() {
   return (
-    <div className="overflow-hidden whitespace-nowrap bg-peach-50 w-190 px-20">
+    <div className="overflow-hidden whitespace-nowrap bg-peach-50 w-80 md:w-190 px-20">
       <div className="flex animate-marquee gap-10">
         {icons.concat(icons).map((src, i) => (
           <img

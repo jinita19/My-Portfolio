@@ -28,9 +28,9 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
   };
 
   return (
-    <section id="projects" className="w-screen relative py-18 bg-peach-75">
-      <div className="w-full px-40">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-peach-900 py-5 mb-8 text-center">
+    <section id="projects" className="w-screen relative py-14 md:py-18 bg-peach-75">
+      <div className="w-full px-10 md:px-40">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-peach-900 md:py-5 mb-8 text-center">
           Projects
         </h2>
         <div className="relative">

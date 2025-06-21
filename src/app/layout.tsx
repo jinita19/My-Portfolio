@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen bg-peach-50 text-peach-900 font-body">
         <Navbar />
-        <main className="px-40 pt-20">{children}</main>
+        <main className="px-10 md:px-40 pt-20">{children}</main>
       </body>
     </html>
   );
