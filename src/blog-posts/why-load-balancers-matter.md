@@ -115,16 +115,16 @@ GWLB combines load balancing with network security appliance integration. It ope
 ![Dynamic algorithms image](/blog/load-balancing/dynamic-load-balancing-algo.png)
 
 **1. Least Connections:**
-    Send the next client request to which ever server is currently handling the fewest active sessions.
+Send the next client request to which ever server is currently handling the fewest active sessions.
 
 **2. Weighted Least Connections:**
-   Consider both current load AND server capacity when making decisions.
+Consider both current load AND server capacity when making decisions.
 
 **3. Least Response Time:**
-   Route to the server that's responding fastest right now.
+Route to the server that's responding fastest right now.
 
 **4. Resource-Based:**
-   Check CPU, memory, and current load before making routing decisions.
+Check CPU, memory, and current load before making routing decisions.
 
 ## When Load Balancers Fail: The Backup Host Strategy
 

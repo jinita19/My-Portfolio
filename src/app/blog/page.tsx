@@ -18,7 +18,9 @@ export default async function BlogsPage() {
             role="link"
           >
             <div className="flex flex-col">
-              <span className="text-xl font-heading font-bold text-peach-800 mb-1 group-hover:underline">{blog.title}</span>
+              <span className="text-xl font-heading font-bold text-peach-800 mb-1 group-hover:underline">
+                {blog.title}
+              </span>
               <span className="text-peach-500 text-sm">{blog.readTime}</span>
             </div>
             <span className="text-peach-700 text-sm font-medium ml-4 min-w-[110px] text-right">
