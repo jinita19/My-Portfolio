@@ -1,24 +1,36 @@
-import Link from 'next/link';
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
-import { projects } from '@/data/projects';
+import Link from 'next/link';
 
-export default function ProjectsSection({
-  showCarousel,
-  visibleProjects,
-  handlePrev,
-  handleNext,
-  carouselIndex,
-}: {
-  showCarousel: boolean;
-  visibleProjects: typeof projects;
-  handlePrev: () => void;
-  handleNext: () => void;
-  carouselIndex: number;
-}) {
+type Project = {
+  slug: string;
+  image?: string;
+  title: string;
+  description: string;
+  brief?: string;
+  techs?: string[];
+  work?: string[];
+};
+
+export default function ProjectsSection({ projects }: { projects: Project[] }) {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const showCarousel = projects.length > 3;
+  const visibleProjects = showCarousel
+    ? projects.slice(carouselIndex, carouselIndex + 3)
+    : projects;
+
+  const handlePrev = () => {
+    setCarouselIndex((prev) => Math.max(prev - 1, 0));
+  };
+  const handleNext = () => {
+    setCarouselIndex((prev) => Math.min(prev + 1, projects.length - 3));
+  };
+
   return (
     <section id="projects" className="w-screen relative py-18 bg-peach-75">
       <div className="w-full px-40">
-        <h1 className="text-6xl font-bold mb-8 text-center text-peach-900 py-5">Projects</h1>
+        <h2 className="text-4xl md:text-5xl font-heading font-bold text-peach-900 py-5 mb-8 text-center">Projects</h2>
         <div className="relative">
           <div
             className={

@@ -24,7 +24,7 @@ export default function Navbar() {
           <Link href="#projects">Projects</Link>
         </li>
         <li>
-          <Link href="/blog">Blog</Link>
+          <Link href="#blog">Blog</Link>
         </li>
         <li>
           <Link href="#contact">Contact</Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
               Projects
             </Link>
             <Link
-              href="/blog"
+              href="#blog"
               onClick={() => setDrawerOpen(false)}
               className="text-peach-900 font-heading text-xl font-bold"
             >
