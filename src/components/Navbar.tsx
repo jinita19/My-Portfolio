@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -11,23 +12,32 @@ export default function Navbar() {
         'navbar flex items-center justify-between py-4 bg-peach-50 shadow-sm fixed w-full px-40 z-10 font-navbar'
       }
     >
-      <h1 className="text-xl font-bold text-peach-900 font-heading heading-bold">Jinita Patel</h1>
+      <Link href="/" className="flex items-center gap-2" aria-label="Home">
+        <Image
+          src="/profile-pic.png"
+          alt="Jinita Patel profile"
+          width={32}
+          height={32}
+          className="w-8 h-8 rounded-full object-cover border border-peach-300"
+        />
+        <h1 className="text-xl font-bold text-peach-900 font-heading heading-bold">Jinita Patel</h1>
+      </Link>
       {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-6 text-sm text-peach-500 font-medium">
-        <li>
+        {/* <li>
           <Link href="/">Home</Link>
+        </li> */}
+        <li>
+          <Link href="/#projects">Projects</Link>
+        </li>
+        <li>
+          <Link href="/#blog">Blog</Link>
         </li>
         <li>
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="#projects">Projects</Link>
-        </li>
-        <li>
-          <Link href="#blog">Blog</Link>
-        </li>
-        <li>
-          <Link href="#contact">Contact</Link>
+          <Link href="/#contact">Contact</Link>
         </li>
       </ul>
       {/* Mobile Hamburger */}
@@ -56,12 +66,26 @@ export default function Navbar() {
             >
               ×
             </button>
-            <Link
+            {/* <Link
               href="/"
               onClick={() => setDrawerOpen(false)}
               className="text-peach-900 font-heading text-xl font-bold"
             >
               Home
+            </Link> */}
+            <Link
+              href="/#projects"
+              onClick={() => setDrawerOpen(false)}
+              className="text-peach-900 font-heading text-xl font-bold"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/#blog"
+              onClick={() => setDrawerOpen(false)}
+              className="text-peach-900 font-heading text-xl font-bold"
+            >
+              Blog
             </Link>
             <Link
               href="/about"
@@ -71,21 +95,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="#projects"
-              onClick={() => setDrawerOpen(false)}
-              className="text-peach-900 font-heading text-xl font-bold"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#blog"
-              onClick={() => setDrawerOpen(false)}
-              className="text-peach-900 font-heading text-xl font-bold"
-            >
-              Blog
-            </Link>
-            <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setDrawerOpen(false)}
               className="text-peach-900 font-heading text-xl font-bold"
             >

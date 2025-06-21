@@ -7,11 +7,16 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  console.error('Error occurred:', error);
   return (
-    <div>
+    <div className="flex flex-row items-center justify-center min-h-screen p-4">
       <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
+      <p>{error.message}</p>
+      <button
+        onClick={() => reset()}
+        className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+      >
+        Try again
+      </button>
     </div>
   );
 }

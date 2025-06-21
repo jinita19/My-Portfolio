@@ -18,9 +18,6 @@ export default function HeroSection() {
             that truly improve the user experience. I enjoy working on projects that make a real
             difference in people’s lives.
           </p>
-          <div className="flex gap-10">
-            {/* Blog and Experience Links will be added in the main page */}
-          </div>
           <HeroLinks />
         </div>
         <div className="w-100 h-100 relative rounded-full overflow-hidden border-4 border-peach-200 shadow-md">
