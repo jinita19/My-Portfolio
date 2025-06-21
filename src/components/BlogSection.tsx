@@ -27,7 +27,7 @@ export default async function BlogSection({ blogs }: BlogSectionProps) {
           Latest Blog Posts
         </h2>
         <div
-          className={`${visibleBlogs.length < 3 ? 'flex flex-col w-1/3 mx-auto' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'}`}
+          className={`${visibleBlogs.length < 3 ? 'flex flex-col md:w-1/3 mx-auto' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'}`}
         >
           {visibleBlogs.map((blog) => (
             <Link

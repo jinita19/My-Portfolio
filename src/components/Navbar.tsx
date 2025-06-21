@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaBars } from 'react-icons/fa';
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Navbar() {
   return (
     <nav
       className={
-        'navbar flex items-center justify-between py-4 bg-peach-50 shadow-sm fixed w-full px-40 z-10 font-navbar'
+        'navbar flex items-center justify-between py-4 bg-peach-50 shadow-sm fixed w-full px-10 md:px-40 z-10 font-navbar'
       }
     >
       <Link href="/" className="flex items-center gap-2" aria-label="Home">
@@ -40,19 +41,20 @@ export default function Navbar() {
           <Link href="/#contact">Contact</Link>
         </li>
       </ul>
+
       {/* Mobile Hamburger */}
-      <button
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-        onClick={() => setDrawerOpen(true)}
-        aria-label="Open menu"
-      >
-        <span className="block w-6 h-0.5 bg-peach-900 mb-1"></span>
-        <span className="block w-6 h-0.5 bg-peach-900 mb-1"></span>
-        <span className="block w-6 h-0.5 bg-peach-900"></span>
-      </button>
+      <div className="md:hidden flex items-center">
+        <button
+          onClick={() => setDrawerOpen(!drawerOpen)}
+          aria-label="Open menu"
+          className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-peach-400"
+        >
+          <FaBars size={28} color="#5c1810" />
+        </button>
+      </div>
       {/* Drawer Menu */}
       {drawerOpen && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed inset-0 z-50 flex justify-end">
           <div
             className="fixed inset-0 bg-black/30 backdrop-blur-sm"
             onClick={() => setDrawerOpen(false)}
