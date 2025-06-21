@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400&family=Poppins:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/profile-pic.png" type="image/png" />
       </head>
       <body className="min-h-screen bg-peach-50 text-peach-900 font-body">
         <Navbar />

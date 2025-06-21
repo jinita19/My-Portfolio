@@ -3,7 +3,7 @@ import { formatDate } from '@/helpers';
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();
-  console.log('Blogs:', blogs);
+
   return (
     <section className="max-w-3xl mx-auto py-16 px-4">
       <h1 className="text-4xl font-bold text-peach-900 mb-10 text-center">All Blog Posts</h1>
