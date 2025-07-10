@@ -27,13 +27,13 @@ export default async function BlogSection({ blogs }: BlogSectionProps) {
           Latest Blog Posts
         </h2>
         <div
-          className={`${visibleBlogs.length < 3 ? 'flex flex-col md:w-1/3 mx-auto' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'}`}
+          className={`${visibleBlogs.length < 3 ? 'flex justify-center gap-8' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'}`}
         >
           {visibleBlogs.map((blog) => (
             <Link
               key={blog.slug}
               href={`/blog/${blog.slug}`}
-              className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-200 p-0 flex flex-col overflow-hidden hover:-translate-y-2 border border-transparent hover:border-peach-400"
+              className={`group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-200 p-0 flex flex-col overflow-hidden hover:-translate-y-2 border border-transparent hover:border-peach-400 ${visibleBlogs.length < 3 ? 'w-full md:w-1/3' : ''}`}
             >
               <div className="relative w-full h-48">
                 <Image

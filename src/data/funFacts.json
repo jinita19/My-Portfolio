@@ -1,3 +1,4 @@
 {
-  "why-load-balancers-matter": "Load balancers can use algorithms to distribute traffic based on factors like server health, geographical location, or even user session persistence."
+  "bloom-filter": "Bloom filters are commonly used in web browsers to quickly check if a URL has been visited before, improving browsing speed.",
+  "why-load-balancers-matter": "Load balancers can be used to distribute traffic based on factors like server performance, geographic location, and even the type of content being requested."
 }
