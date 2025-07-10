@@ -116,9 +116,22 @@ A Bloom Filter consists of:
 | False Positive  |  Yes       | May say item exists when it doesn’t          |
 | False Negative  |  No        | Never misses an item that was actually added |
 
-### False Positive Scenario
+### Understanding False Positives in Bloom Filters
 
 ![False Positive](/blog/bloom-filter/false-positive.png)
+
+The diagram above demonstrates how Bloom Filters handle lookups and how false positives can occur:
+
+- The keys `foo`, `bar`, and `apple` are added to the set.
+- Each key is hashed using three different hash functions, and the corresponding bit positions are set to `1` in the bit array.
+- When we check for the key `cat`, one of its hashed positions points to a `0`, so we know for sure that `cat` was **never added** — a definite **"not present"**.
+- However, the key `kite` hashes to three positions that are **already marked as `1`** by other keys.
+- Since all its bits are `1`, the Bloom Filter returns **true**, even though `kite` was **never added**.
+
+This is a **false positive** — the filter incorrectly thinks `kite` exists.
+
+Bloom Filters are designed this way:  
+they **never miss an inserted item**, but they **may mistakenly say something exists** due to overlapping bits.
 
 ## Limitations of Bloom Filters
 
