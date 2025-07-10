@@ -48,6 +48,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           [&>p]:mt-4
           [&>ul]:list-disc [&>ul]:list-inside [&>ol]:list-decimal [&>ol]:list-inside
           [&>li]:ml-4 [&>li]:mt-2
+          [&>table]:w-full [&>table]:px-3 [&>table]:my-6 [&>table]:border [&>table]:border-peach-800 [&>table]:border-separate [&>table]:rounded-md [&>table]:overflow-hidden [&>table]:bg-white/40
+          [&>thead]:border-b-2 [&>thead]:border-peach-800
+          [&>th]:text-peach-900 [&>th]:font-semibold [&>th]:px-6 [&>th]:py-3
+          [&>td]:px-6 [&>td]:py-3 [&>td]:border-r [&>td]:border-peach-800 last:[&>td]:border-r-0 [&>td]:text-peach-800
         "
       >
         {compiled.content}
